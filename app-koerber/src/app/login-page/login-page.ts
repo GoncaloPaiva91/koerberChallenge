@@ -12,7 +12,7 @@ interface IAuth {
   templateUrl: './login-page.html',
   styleUrls: ['./login-page.scss']
 })
-export class LoginPageComponent implements OnInit{
+export class LoginPageComponent implements OnInit {
  public loginForm: FormGroup;
  public isValid: boolean = false;
 
@@ -31,7 +31,7 @@ export class LoginPageComponent implements OnInit{
      // "password": "9uQFF1Lh",
 
     if (valid) {
-      // TODO: maybe used obs and subscribe here;;;
+      // TODO: maybe used obs and subscribe here;
       this.authService.authByLogin(value, this.router);
     }
   }

@@ -7,6 +7,7 @@ import { LoginPageComponent } from './login-page/login-page';
 import { UserPageComponent } from './user-page/user-page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicesPage } from './services/services';
+import { DataService  } from './services/data-service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ServicesPage } from './services/services';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ServicesPage],
+  providers: [ServicesPage, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

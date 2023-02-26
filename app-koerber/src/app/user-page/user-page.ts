@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-page',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-page.scss']
 })
 export class UserPageComponent implements OnInit {
-  constructor() {}
+
+ constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   logout(): void {
-
+    this.router.navigate(['login-page']);
   }
 }

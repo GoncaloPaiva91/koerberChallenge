@@ -1,23 +1,25 @@
 <body>
-
-<div class="header">
-  <a href="#default" class="logo">CompanyLogo</a>
-  <div class="header-right">
-    <div class="logout" (click)="logout()">Logout</div>
-  </div>
-</div>
-
-<div class="post-information">
-  <div class="flex">
-    <div>
-      <h1>Posts List</h1>
+  <div class="header">
+    <div class="header-logo">
+      <img class="koerber-logo" src="../../assets/img/koerber-logo.svg" alt="Bootstrap">
     </div>
-    <div>
-      <button type="button" class="btn btn-primary">New Post</button>
+    <div class="header-right">
+      <div class="name">Terry Medhurst</div> <!-- maybe this is dynamic -->
+      <div class="logout" (click)="logout()">
+        <img class="logout-icon" src="../../assets/img/box-arrow-right.svg" alt="Bootstrap">
+      </div>
     </div>
   </div>
-  <p>Insert Email</p>
-  <input type="email" name="email" ngModel email>
-</div>
-
+  <div class="post-information">
+    <div class="flex">
+      <div>
+        <h1>Posts List</h1>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary">New Post</button>
+      </div>
+    </div>
+    <p>Insert Email</p>
+    <input type="email" name="email" ngModel email="true">
+  </div>
 </body>
