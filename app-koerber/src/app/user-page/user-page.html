@@ -1,1 +1,23 @@
-<p>user-page works!</p>
+<body>
+
+<div class="header">
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-right">
+    <div class="logout" (click)="logout()">Logout</div>
+  </div>
+</div>
+
+<div class="post-information">
+  <div class="flex">
+    <div>
+      <h1>Posts List</h1>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary">New Post</button>
+    </div>
+  </div>
+  <p>Insert Email</p>
+  <input type="email" name="email" ngModel email>
+</div>
+
+</body>
