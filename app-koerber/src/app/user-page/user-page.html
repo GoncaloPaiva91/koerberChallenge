@@ -1,25 +1,30 @@
-<body>
+<header>
   <div class="header">
     <div class="header-logo">
       <img class="koerber-logo" src="../../assets/img/koerber-logo.svg" alt="Bootstrap">
     </div>
     <div class="header-right">
-      <div class="name">Terry Medhurst</div> <!-- maybe this is dynamic -->
+      <div class="name">{{ firstName }} {{ lastName }}</div> <!-- maybe this is dynamic -->
       <div class="logout" (click)="logout()">
         <img class="logout-icon" src="../../assets/img/box-arrow-right.svg" alt="Bootstrap">
       </div>
     </div>
   </div>
+</header>
+
+<body>
   <div class="post-information">
     <div class="flex">
       <div>
         <h1>Posts List</h1>
       </div>
       <div>
-        <button type="button" class="btn btn-primary">New Post</button>
+        <button type="button" class="btn btn-primary" (click)="openPostModal()" [disabled]="invalidEmail">New Post</button>
       </div>
     </div>
     <p>Insert Email</p>
-    <input type="email" name="email" ngModel email="true">
+    <input type="email" name="email" [(ngModel)]="email" email="true">
+    <button type="submit" class="btn" (click)="checkEmail()" >ok</button>
+    <div *ngIf="invalidEmail"><p class="danger">Invalid email ! Please try again !</p></div>
   </div>
 </body>
