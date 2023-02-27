@@ -41,13 +41,17 @@ body {
 
 .post-information {
   padding: 20px;
-  .flex{
+  .flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-}
 
-.danger {
-  color: #ff0000;
+  &-email {
+    width: 25%;
+  }
+
+  .danger {
+    color: #ff0000;
+  }
 }

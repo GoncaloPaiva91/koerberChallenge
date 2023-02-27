@@ -13,7 +13,7 @@ export class UserPageComponent implements OnInit {
   public lastName: string;
   public id: number;
   public email: string;
-  public invalidEmail: boolean = true; 
+  public showEmailMessage: boolean = false; 
 
   constructor(private router: Router) { }
 
@@ -23,8 +23,8 @@ export class UserPageComponent implements OnInit {
 
   getUser(): void { // get a single user;
     fetch('https://dummyjson.com/users/1')
-      .then(res => res.json())
-      .then(response => {
+      .then((res) => res.json())
+      .then((response: any) => {
         if (response) {
           this.id = response.id; // get the user ID for list of posts;
           this.firstName = response.firstName; // taking the response and set first name on header
@@ -48,15 +48,9 @@ export class UserPageComponent implements OnInit {
   }
 
   checkEmail(): void {
-    const rgExp: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i; // using this regex for see if is actually an e-mail by @
+    const rgExp: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;// using this regex for see if is actually an e-mail by @
     const expressionResult: boolean = rgExp.test(this.email);
-    if (expressionResult) {
-      this.invalidEmail = false;
-      this.getPosts();
-    } else {
-      this.invalidEmail = true;
-    }
-
+    this.showEmailMessage = expressionResult ? false : true; // if user set a incorrect e-mail it will display a error message on screen;
   }
 
   logout(): void {

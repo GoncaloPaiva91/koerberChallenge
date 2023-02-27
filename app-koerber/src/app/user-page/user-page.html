@@ -19,12 +19,17 @@
         <h1>Posts List</h1>
       </div>
       <div>
-        <button type="button" class="btn btn-primary" (click)="openPostModal()" [disabled]="invalidEmail">New Post</button>
+        <button type="button" class="btn btn-primary" (click)="openPostModal()">New Post</button>
       </div>
     </div>
-    <p>Insert Email</p>
-    <input type="email" name="email" [(ngModel)]="email" email="true">
-    <button type="submit" class="btn" (click)="checkEmail()" >ok</button>
-    <div *ngIf="invalidEmail"><p class="danger">Invalid email ! Please try again !</p></div>
+    <div class="post-information-email">
+      <div class="input-group mb-3 email-width">
+        <input type="email" class="form-control" placeholder="Insert email" [(ngModel)]="email">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="checkEmail()">Submeter</button>
+        </div>
+      </div>
+      <div *ngIf="showEmailMessage"><p class="danger">Invalid e-mail. Please, try again !</p></div>
+    </div>
   </div>
 </body>
