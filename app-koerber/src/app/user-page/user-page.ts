@@ -57,7 +57,7 @@ export class UserPageComponent implements OnInit {
     this.bsModalRef = this.modalService.open(ModalComponent, {backdrop: 'static', size: 'lg', keyboard: false, centered: true});
      this.bsModalRef.result.then((result) => {
       if (result) {
-        console.log(result);
+       this.posts.push(result); // receives data from modal and add to posts ;
       }
     });
   }
