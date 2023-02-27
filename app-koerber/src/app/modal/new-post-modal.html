@@ -1,0 +1,22 @@
+<div class="modal-post">
+  <div class="modal-header">
+    <h5 class="modal-title">New Post</h5>
+  </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" placeholder="Insert Title" name="title" [(ngModel)]="title">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea type="text" class="form-control" placeholder="Insert Description"
+          [(ngModel)]="description"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="close()">
+        Cancel
+      </button>
+      <button type="submit" class="btn btn-primary" (click)="addPost()">New Post</button>
+    </div>
+</div>

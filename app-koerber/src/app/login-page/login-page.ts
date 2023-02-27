@@ -31,7 +31,6 @@ export class LoginPageComponent implements OnInit {
      // "password": "9uQFF1Lh",
 
     if (valid) {
-      // TODO: maybe used obs and subscribe here;
       this.authService.authByLogin(value, this.router);
     }
   }

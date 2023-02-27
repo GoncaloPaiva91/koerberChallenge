@@ -5,23 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page';
 import { UserPageComponent } from './user-page/user-page';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicesPage } from './services/services';
 import { DataService  } from './services/data-service';
+import { ModalComponent } from './modal/new-post-modal';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     UserPageComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [ServicesPage, DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AppComponent],
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+.modal-post {
+  z-index: none !important;
+  .modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    input {
+      margin-bottom: 10px;
+    }
+  }
+}
