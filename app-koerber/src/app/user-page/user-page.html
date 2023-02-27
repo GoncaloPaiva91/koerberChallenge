@@ -24,12 +24,23 @@
     </div>
     <div class="post-information-email">
       <div class="input-group mb-3 email-width">
-        <input type="email" class="form-control" placeholder="Insert email" [(ngModel)]="email">
+        <input type="email" class="form-control" placeholder="Insert email" [(ngModel)]="email" value="{{ this.dataService.email }}">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" (click)="checkEmail()">Submeter</button>
         </div>
       </div>
-      <div *ngIf="showEmailMessage"><p class="danger">Invalid e-mail. Please, try again !</p></div>
+      <div *ngIf="showEmailErrorMessage"><p class="danger">Invalid e-mail. Please, try again !</p></div>
+    </div>
+    {{ cacheEmail }}
+  </div>
+
+  <!--gallery Posts -->
+  <div class="gallery" *ngFor="let post of posts">
+    <div class="gallery-posts-column">
+      <div class="gallery-posts-card">
+        <h3>Post Title</h3>
+        <p>{{ post.body }}</p>
+      </div>
     </div>
   </div>
 </body>

@@ -1,11 +1,5 @@
-* {box-sizing: border-box;}
-
-body { 
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .header {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   overflow: hidden;
   background-color:grey;
   display: flex;
@@ -38,20 +32,46 @@ body {
   }
 }
 
+body { 
+  margin: 8px;
+  .post-information {
+    padding: 20px;
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.post-information {
-  padding: 20px;
-  .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &-email {
+      width: 25%;
+    }
+
+    .danger {
+      color: #ff0000;
+    }
   }
 
-  &-email {
-    width: 25%;
-  }
+  .gallery {
+    margin: 0 -5px;
 
-  .danger {
-    color: #ff0000;
+    &::after {
+      display: table;
+      clear: both;
+    }
+
+    &-posts-column {
+      float: left;
+      width: 25%;
+      padding: 0 10px 20px;
+    }
+
+    &-posts-card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+      height: 200px;
+      min-height: 200px;
+    }
   }
 }

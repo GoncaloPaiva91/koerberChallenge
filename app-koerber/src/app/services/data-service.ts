@@ -3,20 +3,20 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataService {
 
-  private _name: string;
+  private _email: string;
 
   constructor() {
   }
 
-  get name(): string {
-    return this._name;
+  get email(): string {
+    return this._email;
   }
 
-  set name(name: string) {
-    this._name = name;
+  set email(email: string) {
+    this._email = email;
   }
 
   clearDataService(): void {
-    this.name = '';
+    this._email = '';
   }
 }
